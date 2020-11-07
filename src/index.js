@@ -5,10 +5,7 @@ const httpServer = http.createServer(handleServer);
 
 function handleServer(rq, rs) {
    
-    if(rq.url !== "/welcome" && rq.url !== "/contact"  )
-    {
-        rs.write('404 - file not found');
-    }
+ 
     
     if(rq.url ==="/welcome")
     {   
@@ -16,7 +13,7 @@ function handleServer(rq, rs) {
         rs.write("Welcome to Dominos!");
         rs.end();
     } 
-    if(rq.url ==="/contact")
+    else if(rq.url ==="/contact")
     {
         rs.writeHead(200, { 'Content-Type': 'application/json' });
         rs.write(JSON.stringify({
@@ -24,6 +21,10 @@ function handleServer(rq, rs) {
             email: 'guestcaredominos@jublfood.com'
             }));
         rs.end();
+    }
+    else {
+        rs.write('404 - file not found');
+
     }
     
   
