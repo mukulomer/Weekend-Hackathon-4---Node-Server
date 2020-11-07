@@ -3,7 +3,7 @@ var http = require("http");
 const httpServer = http.createServer(handleServer);
  
 
-function handleServer(req, res) {
+function handleServer(rq, rs) {
    
     if(rq.url !== "/welcome" && rq.url !== "/contact"  )
     {
