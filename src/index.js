@@ -19,7 +19,7 @@ function handleServer(rq, rs) {
     if(rq.url ==="/contact")
     {
         rs.writeHead(200, { 'Content-Type': 'application/json' });
-        rs.write(json.strigify({
+        rs.write(JSON.stringify({
             phone: '18602100000',
             email: 'guestcaredominos@jublfood.com'
             }));
