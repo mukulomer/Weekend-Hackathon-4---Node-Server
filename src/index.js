@@ -23,6 +23,7 @@ function handleServer(rq, rs) {
         rs.end();
     }
     else {
+       rs.writeHead(404, { 'Content-Type': 'text/plain' });
         rs.write('404 - file not found');
 
     }
