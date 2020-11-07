@@ -2,29 +2,31 @@ var http = require("http");
 
 const httpServer = http.createServer(handleServer);
  
-let obj= {
-    phone: '18602100000',
-    email: 'guestcaredominos@jublfood.com'
-    };
 
 function handleServer(req, res) {
-
+   
+    if(rq.url !== "/welcome" && rq.url !== "/contact"  )
+    {
+        rs.write('404 - file not found');
+    }
     
     if(rq.url ==="/welcome")
-    {
+    {   
+        rs.writeHead(200, { 'Content-Type': 'text/plain' });
         rs.write("Welcome to Dominos!");
         rs.end();
     } 
     if(rq.url ==="/contact")
     {
-        rs.write(json.strigify(obj));
+        rs.writeHead(200, { 'Content-Type': 'application/json' });
+        rs.write(json.strigify({
+            phone: '18602100000',
+            email: 'guestcaredominos@jublfood.com'
+            }));
         rs.end();
     }
     
-    if(rq.url !== "/welcome" && rq.url !== "/contact"  )
-    {
-    rs.status(404).send(` not found!`);
-    }
+  
 
 
 
