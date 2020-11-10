@@ -21,10 +21,10 @@ function handleServer(rq, rs) {
             }));
         rs.end();
     }
-    
+    else{
         rs.writeHead(404, {'Content-Type': 'text/html'});
         rs.end("404 Not Found");
-
+    }
     
   
 
