@@ -11,8 +11,7 @@ function handleServer(rq, rs) {
         rs.write("Welcome to Dominos!");
         rs.end();
     } 
-    
-    if(rq.url ==="/contact")
+    else if(rq.url ==="/contact")
     {
         rs.writeHead(200, { 'Content-Type': 'application/json' });
         rs.write(JSON.stringify({
